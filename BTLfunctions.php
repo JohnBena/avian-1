@@ -41,9 +41,12 @@ function login($con, $email, $password){
         exit();
     } elseif($checkpass === True){
         session_start();
-        $UVIDF16 = sprintf('%16u', $take["UniversalID"]);
+        $UVIDF16 = sprintf('%016u', $take["UniversalID"]);
         $_SESSION["UniversalID"] = $UVIDF16;
-	// make file here if not made before
-	header("location: /accountScreen.php");
+	$path = "PAMregister/users/$UVIDF16";
+	if (!file_exists($path)) {
+		mkdir($path, 0777);
+	}
+		
     }
 }
