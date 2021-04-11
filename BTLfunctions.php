@@ -43,7 +43,7 @@ function login($con, $email, $password){
         session_start();
         $UVIDF16 = sprintf('%16u', $take["UniversalID"]);
         $_SESSION["UniversalID"] = $UVIDF16;
-		// make file here if not made before
-		header("location: /accountScreen.php");
+	// make file here if not made before
+	header("location: /accountScreen.php");
     }
 }
