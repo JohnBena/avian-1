@@ -43,8 +43,11 @@ function login($con, $email, $password){
         session_start();
         $UVIDF16 = sprintf('%016u', $take["UniversalID"]);
         $_SESSION["UniversalID"] = $UVIDF16;
-	$_SESSION["Username"] = $take["Username"];
-	$path = "PAMregister/users/$UVIDF16";
+	$Username = $take["Username"];
+	$UVIDF16 = $_SESSION["Username"];
+	$path = "PAMregister/users/$Username";
+//	$upath = "PAMregister/users/$UVIDF16";
+//	$path = $upath . "-" . $Username;
 	if (!file_exists($path)) {
 		mkdir($path, 0777);
 	}
