@@ -44,7 +44,7 @@ function login($con, $email, $password){
         $UVIDF16 = sprintf('%016u', $take["UniversalID"]);
         $_SESSION["UniversalID"] = $UVIDF16;
 	$Username = $take["Username"];
-	$UVIDF16 = $_SESSION["Username"];
+	$Username = $_SESSION["Username"];
 	$path = "PAMregister/users/$Username";
 //	$upath = "PAMregister/users/$UVIDF16";
 //	$path = $upath . "-" . $Username;
